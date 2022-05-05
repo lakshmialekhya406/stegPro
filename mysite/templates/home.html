@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2 class="card-title">Welcome</h2>
+  <!-- <p class="card-text">Example Django 2.1 / Python 3.7</p>
+  <p class="card-text">
+    Watch it on <a href="https://www.youtube.com/playlist?list=PLLxk3TkuAYnpm24Ma1XenNeq1oxxRcYFT">YouTube</a> or
+    read the <a href="https://simpleisbetterthancomplex.com/tutorial/2016/08/01/how-to-upload-files-with-django.html">Blog Post</a>.
+  </p>
+  <p class="card-text">
+    Vitor Freitas<br>
+    <a href="https://twitter.com/vitorfs">@vitorfs</a>
+  </p> -->
+  <p>Make your messages more secret!!!</p>
+{% if data == "An error occured"%}
+<p class="ahref" onclick="openPopup1()">Check here....</p>
+<h2 class ="rrr">An Error Occured</h2>
+<div class="popup" id="popup1">
+  <h2>Oops!!</h2>
+  <p>An Error Occured</p>
+  <button type="button" onclick="closePopup1()">OK</button>
+</div>
+{% elif data %}
+<p class="ahref" onclick="openPopup1()">Check here....</p>
+<div class="popup" id="popup1">
+  <h2>Thank You!!!</h2>
+  <p>Sucessfully done!!</p>
+  <button type="button" onclick="closePopup1()">OK</button>
+</div>
+{% endif %}
+
+<script>
+  let popup = document.getElementById("popup");
+
+  function openPopup(){
+    popup.classList.add("open-popup");
+  }
+  function closePopup(){
+    popup.classList.remove("open-popup");
+  }
+</script>
+
+
+{% if data1 == "Wrong password" %}
+<p class="ahref" onclick="openPopup1()">Check here....</p>
+<div class="popup" id="popup1">
+  <h2>Ooops!!</h2>
+  <p>Wrong password, please enter the right one.</p>
+  <button type="button" onclick="closePopup1()">OK</button>
+</div>
+{% elif data1 == "An error occured" %}
+<p class="ahref" onclick="openPopup1()">Check here....</p>
+<h2 class ="rrr">An Error Occured</h2>
+<div class="popup" id="popup1">
+  <h2>Oops!!</h2>
+  <p>An Error Occured</p>
+  <button type="button" onclick="closePopup1()">OK</button>
+</div>
+{% elif data1 == "Invalid data" %}
+<p class="ahref" onclick="openPopup1()">Check here....</p>
+<h2 class="rrr">Invalid data</h2>
+<div class="popup" id="popup1">
+  <h2>Oops!!</h2>
+  <p>Invalid data</p>
+  <button type="button" onclick="closePopup1()">OK</button>
+</div>
+{% elif data1 %}
+<p class="ahref" onclick="openPopup1()">Check here....</p>
+<div class="popup" id="popup1">
+  <h2>Sucessfully done!!</h2>
+  <p><strong>MESSAGE : </strong>{{data1}} </p>
+  <button type="button" onclick="closePopup1()">OK</button>
+</div>
+{% endif %}
+
+<script>
+  let popup1 = document.getElementById("popup1");
+
+  function openPopup1(){
+    popup1.classList.add("open-popup");
+  }
+  function closePopup1(){
+    popup1.classList.remove("open-popup");
+  }
+</script>
+{% endblock %}
+
+{% block content1 %}
+<button class="button"><a href="{% url 'book_list' %}" alt='Broken Link' style="color:black;">ENCODE</a></button><br>
+<button class="button"><a href="{% url 'book_list1' %}" alt='Broken Link' style="color:black;">DECODE</a></button>
+{% endblock %}

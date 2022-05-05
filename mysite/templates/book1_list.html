@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% block content_header %}
+    <h2>Decode</h2>
+    <p>
+      <a href="{% url 'upload_book1' %}" class="btn btn-primary">Upload</a>
+    </p>
+  {% endblock %}
+
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <!-- <th>Message</th> -->
+        <th>Decode</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for book in books %}
+        <tr>
+          <td>
+            {% if book.image %}
+              <a href="{{book.image.url}}"><img src="{{ book.image.url }}" alt="No image" style="width:100px;"></a>
+            {% else %}
+              <span class="text-muted">No cover</span>
+            {% endif %}
+          </td>
+          <!-- <td>{{ book.message }}</td> -->
+          <td>
+            <form method="post" action="{% url 'delete_book1' book.pk %}">
+              {% csrf_token %}
+              <button type="submit" class="btn">DECODE</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

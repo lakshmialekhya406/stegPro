@@ -1,0 +1,90 @@
+body{
+    background-image: url(mbg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .popup{
+      width: 400px;
+      background: #fff;
+      position: absolute;
+      top: 0%;
+      left: 50%;
+      transform: translate(-50%,-50%) scale(0.1);
+      text-align: center;
+      padding: 0 30px 30px;
+      color: #333;
+      visibility: hidden;
+      transition: transform 0.4s, top 0.4s;
+      border: 2px solid black;
+      padding: 10px;
+      border-radius: 25px;
+  }
+  
+  .open-popup{
+      visibility: visible;
+      top: 50%;
+      transform: translate(-50%,-50%) scale(1);
+  }
+    
+  .popup h2{
+      font-size: 38px;
+      font-weight: 500;
+      margin: 30px 0 10px;
+  }
+    
+  .popup button{
+      width: 100%;
+      margin-top: 50px;
+      padding: 10px 0;
+      background: #6fd649;
+      color: #fff;
+      border: 0;
+      outline: none;
+      font-size: 18px;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+  }
+  .button {
+    background-color: rgb(226, 224, 224); /* Green */
+    border: none;
+    color: white;
+    width: 59.5%;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 15px 309px;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+  
+  h1{
+      color: rgb(226, 224, 224);
+      text-align: center;
+  }
+  .rrr{
+      font-size: 30px;
+      font-family: 'Times New Roman', Times, serif;
+      color: red;
+  }
+  .ahref{
+      font-size: 30px;
+      font-family: 'Times New Roman', Times, serif;
+      color: rgb(31, 31, 160);
+  }
+  .btn{
+    background-color: rgb(226, 224, 224); /* Green */
+    border: none;
+    color: rgb(19, 26, 163);
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 6px;
+    cursor: pointer;
+    border-radius: 12px;
+  }
